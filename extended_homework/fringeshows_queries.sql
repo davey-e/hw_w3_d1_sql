@@ -13,10 +13,15 @@ SELECT AVG(price) FROM shows;
 SELECT MIN(price) FROM shows;
 
 --   4. Select the sum of the price of all shows.
+SELECT SUM(price) FROM shows;
 
 --   5. Select the sum of the price of all shows whose prices is less than £20.
+SELECT SUM(price) FROM shows
+WHERE price < 20;
 
 --   6. Select the name and price of the most expensive show.
+SELECT name, price FROM shows
+WHERE price = (SELECT MAX(price) FROM shows);
 
 --   7. Select the name and price of the second from cheapest show.
 
