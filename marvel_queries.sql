@@ -20,8 +20,8 @@ WHERE title = 'Batman Begins';
 SELECT * FROM movies;
 
 -- 6. Create a new entry in the 'people' table with the name of one of the instructors
---INSERT INTO people (name) VALUES ('Craig Morton');
---SELECT name FROM people;
+INSERT INTO people (name) VALUES ('Craig Morton');
+SELECT name FROM people;
 
 -- 7. Alex has decided to hijack our movie evening, Remove him from the table of people.
 DELETE FROM people
@@ -39,3 +39,10 @@ SELECT * FROM movies;
 
 -- ## Extension
 -- 1. Research how to delete multiple entries from your table in a single command.
+INSERT INTO people (name) VALUES ('Mickey Mouse');
+INSERT INTO people (name) VALUES ('Donald Duck');
+SELECT name FROM people;
+
+DELETE FROM people
+WHERE name IN ('Mickey Mouse', 'Donald Duck');
+SELECT name FROM people;
