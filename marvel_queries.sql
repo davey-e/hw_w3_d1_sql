@@ -1,14 +1,14 @@
 -- ## Questions
 -- 1. Return ALL the data in the 'movies' table.
-
+SELECT * FROM MOVIES;
 
 -- 2. Return ONLY the name column from the 'people' table
-
-
+SELECT name FROM people;
 
 -- 3. Oops! Someone at CodeClan spelled Lorna's name wrong! Change it to reflect the proper spelling (Noble)
-
-
+UPDATE people SET name = 'Lorna Noble'
+WHERE name = 'Lorna Nobel-Prize';
+SELECT name FROM people;
 
 -- 4. Return ONLY your name from the 'people' table.
 
