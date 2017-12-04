@@ -24,11 +24,15 @@ SELECT name, price FROM shows
 WHERE price = (SELECT MAX(price) FROM shows);
 
 --   7. Select the name and price of the second from cheapest show.
+--???
 
 --   8. Select the names of all users whose names start with the letter "M".
+SELECT name FROM users
+WHERE name LIKE 'M%';
 
 --   9. Select the names of users whose names contain "er".
-
+SELECT name FROM users
+WHERE name LIKE '%er%';
 
 -- ## Section 2
 
