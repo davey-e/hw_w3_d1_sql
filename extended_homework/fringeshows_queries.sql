@@ -39,9 +39,24 @@ WHERE name LIKE '%er%';
 --   The following questions can be answered by using nested SQL statements but ideally you should learn about JOIN clauses to answer them.
 
 --   10. Select the time for the Edinburgh Royal Tattoo.
+--Nested SQL
+SELECT time FROM times
+WHERE show_id = (SELECT id FROM shows WHERE name = 'Edinburgh Royal Tattoo');
+
+--Join
+SELECT time FROM times
+JOIN shows ON shows.id = times.show_id
+WHERE shows.name = 'Edinburgh Royal Tattoo';
 
 --   11. Select the number of users who want to see "Shitfaced Shakespeare".
+--Nested SQL
+SELECT COUNT(name) FROM users
+WHERE id IN (
+  SELECT user_id FROM shows_users WHERE show_id IN (
+    SELECT id FROM shows WHERE name = 'Shitfaced Shakespeare'
+  )
+);
 
---   12. Select all of the user names and the count of shows they're going to see.
+--   12. Select all of the user names and the count of shows they're going to see. 
 
 --   13. SELECT all users who are going to a show at 17:15.
