@@ -11,16 +11,17 @@ WHERE name = 'Lorna Nobel-Prize';
 SELECT name FROM people;
 
 -- 4. Return ONLY your name from the 'people' table.
-
-
+SELECT name FROM people
+WHERE name = 'Dave Ellis';
 
 -- 5. The cinema is showing 'Batman Begins', but Batman is DC, not Marvel! Delete the entry from the 'movies' table.
-
-
+DELETE FROM movies
+WHERE title = 'Batman Begins';
+SELECT * FROM movies;
 
 -- 6. Create a new entry in the 'people' table with the name of one of the instructors
-
-
+INSERT INTO people (name) VALUES ('Craig Morton');
+SELECT name FROM people;
 
 -- 7. Alex has decided to hijack our movie evening, Remove him from the table of people.
 
