@@ -23,8 +23,12 @@ WHERE price < 20;
 SELECT name, price FROM shows
 WHERE price = (SELECT MAX(price) FROM shows);
 
+SELECT name, price FROM shows
+ORDER BY price DESC LIMIT 1;
+
 --   7. Select the name and price of the second from cheapest show.
---???
+SELECT name, price FROM shows
+ORDER BY price ASC LIMIT 1 OFFSET 1;
 
 --   8. Select the names of all users whose names start with the letter "M".
 SELECT name FROM users
@@ -57,6 +61,6 @@ WHERE id IN (
   )
 );
 
---   12. Select all of the user names and the count of shows they're going to see. 
+--   12. Select all of the user names and the count of shows they're going to see.
 
 --   13. SELECT all users who are going to a show at 17:15.
